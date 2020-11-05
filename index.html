@@ -1,81 +1,91 @@
-<div class="container">
-    <div id="pDisplay" class="display"></div>
-    <h2 class="title">Count your Wins and Losses</h2>
-    <div class="reset" onclick="resetLocalStorage()">Reset</div>
-  
-    <div class="block">
-      <div class="red impostor">Impostor</div>
-  
-      <div class="inner-container">
-        <div class="result-container">
-          <div class="calc" onclick="setNewResult('iLost', 'minus')">-</div>
-          <div id="iLost" class="result"></div>
-          <div class="calc" onclick="setNewResult('iLost', 'plus')">+</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Among us score</title>
+    <script type="text/javascript" src="scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+        <div id="pDisplay" class="display"></div>
+        <h2 class="title">Count your Wins and Losses</h2>
+        <div class="reset" onclick="resetLocalStorage()">Reset</div>
+      
+        <div class="block">
+          <div class="red impostor">Impostor</div>
+      
+          <div class="inner-container">
+            <div class="result-container">
+              <div class="calc" onclick="setNewResult('iLost', 'minus')">-</div>
+              <div id="iLost" class="result"></div>
+              <div class="calc" onclick="setNewResult('iLost', 'plus')">+</div>
+            </div>
+            <h2>Lost</h2>
+          </div>
+      
+          <div class="inner-container">
+            <div class="result-container">
+              <div class="calc" onclick="setNewResult('iWin', 'minus')">-</div>
+              <div id="iWin" class="result"></div>
+              <div class="calc" onclick="setNewResult('iWin', 'plus')">+</div>
+            </div>
+            <h2>Won</h2>
+          </div>
         </div>
-        <h2>Lost</h2>
-      </div>
-  
-      <div class="inner-container">
-        <div class="result-container">
-          <div class="calc" onclick="setNewResult('iWin', 'minus')">-</div>
-          <div id="iWin" class="result"></div>
-          <div class="calc" onclick="setNewResult('iWin', 'plus')">+</div>
+      
+        <div class="block">
+          <div class="pink impostor">Crewmate</div>
+      
+          <div class="inner-container">
+            <div class="role-container">
+              <div class="calc" onclick="setNewResult('cLost', 'minus')">-</div>
+              <div id="cLost" class="result"></div>
+              <div class="calc" onclick="setNewResult('cLost', 'plus')">+</div>
+            </div>
+            <h2>Lost</h2>
+          </div>
+      
+          <div class="inner-container">
+            <div class="result-container">
+              <div class="calc" onclick="setNewResult('cWin', 'minus')">-</div>
+              <div id="cWin" class="result"></div>
+              <div class="calc" onclick="setNewResult('cWin', 'plus')">+</div>
+            </div>
+            <h2>Won</h2>
+          </div>
         </div>
-        <h2>Won</h2>
-      </div>
-    </div>
-  
-    <div class="block">
-      <div class="pink impostor">Crewmate</div>
-  
-      <div class="inner-container">
-        <div class="role-container">
-          <div class="calc" onclick="setNewResult('cLost', 'minus')">-</div>
-          <div id="cLost" class="result"></div>
-          <div class="calc" onclick="setNewResult('cLost', 'plus')">+</div>
+        <div class="bottom-bar">
+          <div class="button" onclick="setDisplay('pDisplay')"></div>
         </div>
-        <h2>Lost</h2>
       </div>
-  
-      <div class="inner-container">
-        <div class="result-container">
-          <div class="calc" onclick="setNewResult('cWin', 'minus')">-</div>
-          <div id="cWin" class="result"></div>
-          <div class="calc" onclick="setNewResult('cWin', 'plus')">+</div>
+      
+      <div class="container">
+        <div class="broken"></div>
+        <div id="rDisplay" class="display"></div>
+        <h2 class="title">Result:</h2>
+        <div class="inner-container">
+          <div class="result-container">
+            <h4>Imposter Win %</h4>
+            <h2 class="percentageValue" id="percIWin"></h2>
+          </div>
+          <div class="result-container">
+            <h4>Crewmate Win %</h4>
+            <h2 class="percentageValue" id="percCWin"></h2>
+          </div>
+          <hr>
+          <div class="result-container">
+            <h4>Chance to be Impostor</h4>
+            <h2 class="percentageValue" id="chanceImp"></h2>
+          </div>
+          <div class="result-container">
+            <h4>Chance to be Crewmate</h4>
+            <h2 class="percentageValue" id="chanceCrew"></h2>
+          </div>
         </div>
-        <h2>Won</h2>
+        <div class="bottom-bar">
+          <div class="button" onclick="setDisplay('rDisplay')"></div>
+        </div>
       </div>
-    </div>
-    <div class="bottom-bar">
-      <div class="button" onclick="setDisplay('pDisplay')"></div>
-    </div>
-  </div>
-  
-  <div class="container">
-    <div class="broken"></div>
-    <div id="rDisplay" class="display"></div>
-    <h2 class="title">Result:</h2>
-    <div class="inner-container">
-      <div class="result-container">
-        <h4>Imposter Win %</h4>
-        <h2 class="percentageValue" id="percIWin"></h2>
-      </div>
-      <div class="result-container">
-        <h4>Crewmate Win %</h4>
-        <h2 class="percentageValue" id="percCWin"></h2>
-      </div>
-      <hr>
-      <div class="result-container">
-        <h4>Chance to be Impostor</h4>
-        <h2 class="percentageValue" id="chanceImp"></h2>
-      </div>
-      <div class="result-container">
-        <h4>Chance to be Crewmate</h4>
-        <h2 class="percentageValue" id="chanceCrew"></h2>
-      </div>
-    </div>
-    <div class="bottom-bar">
-      <div class="button" onclick="setDisplay('rDisplay')"></div>
-    </div>
-  </div>
+  </body>
+</html>
+
   
