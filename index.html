@@ -9,56 +9,58 @@
   <body>
     <div class="container">
         <div id="pDisplay" class="display"></div>
-        <h2 class="title">Count your Wins and Losses</h2>
+        <h2 class="title">Décompte des victoires</h2>
         <div class="reset" onclick="resetLocalStorage()">Reset</div>
-      
+
+        <div class="block">
+            <div class="red impostor">Impostor</div>
+            <div class="inner-container">
+                <div id="iWin" class="result"></div>
+                <div class="result-container">
+                    <h2> Win </h2>
+                </div>
+            </div>
+            <div class="inner-container">
+                <div id="cWin" class="result"></div>
+                <div class="result-container">
+                    <h2> Win </h2>
+                </div>
+            </div>
+            <div class="pink impostor">Crewmate</div>
+        </div>
+
+        <!-- Impostor -->
         <div class="block">
           <div class="red impostor">Impostor</div>
-      
-          <div class="inner-container">
-            <div class="result-container">
-              <div class="calc" onclick="setNewResult('iLost', 'minus')">-</div>
-              <div id="iLost" class="result"></div>
-              <div class="calc" onclick="setNewResult('iLost', 'plus')">+</div>
-            </div>
-            <h2>Lost</h2>
-          </div>
-      
+          
           <div class="inner-container">
             <div class="result-container">
               <div class="calc" onclick="setNewResult('iWin', 'minus')">-</div>
               <div id="iWin" class="result"></div>
               <div class="calc" onclick="setNewResult('iWin', 'plus')">+</div>
             </div>
-            <h2>Won</h2>
+            <h2>Win</h2>
           </div>
         </div>
-      
+        <!-- /Impostor -->
+        <!-- Crewmate -->
         <div class="block">
           <div class="pink impostor">Crewmate</div>
-      
-          <div class="inner-container">
-            <div class="role-container">
-              <div class="calc" onclick="setNewResult('cLost', 'minus')">-</div>
-              <div id="cLost" class="result"></div>
-              <div class="calc" onclick="setNewResult('cLost', 'plus')">+</div>
-            </div>
-            <h2>Lost</h2>
-          </div>
-      
+           
           <div class="inner-container">
             <div class="result-container">
               <div class="calc" onclick="setNewResult('cWin', 'minus')">-</div>
               <div id="cWin" class="result"></div>
               <div class="calc" onclick="setNewResult('cWin', 'plus')">+</div>
             </div>
-            <h2>Won</h2>
+            <h2>Win</h2>
           </div>
         </div>
         <div class="bottom-bar">
           <div class="button" onclick="setDisplay('pDisplay')"></div>
         </div>
       </div>
+      <!-- /Crewmate -->
   </body>
 </html>
 

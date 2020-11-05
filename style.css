@@ -37,15 +37,6 @@ h4 {
   margin: 0;
 }
 
-.broken {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  transform: rotate(90deg);
-  background: center / contain no-repeat
-    url("https://i.dlpng.com/static/png/6874713_preview.png");
-}
-
 .bottom-bar {
   display: flex;
   justify-content: center;
